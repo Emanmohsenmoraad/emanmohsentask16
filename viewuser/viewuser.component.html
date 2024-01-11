@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="row justify-content-center pt-5">
+      <div class="card">
+          <h5 class="card-header">User Details</h5> <img class="card-img-top" src="../../assets/download.png" style="width: 50px; height: 50px;"
+              alt="Card image cap"  width="20" height="10"/>
+          <div class="card-body"*ngIf="user">
+            <h2>User Details</h2>
+            <p><strong>Name:</strong> {{ user.id }}</p>
+            <p><strong>Email:</strong> {{ user.firstname }}</p>
+            <p><strong>Age:</strong> {{ user.lastname }}</p>
+            <p><strong>ID:</strong> {{ user.email }}</p> <a [routerLink]="['/']"
+                  class="btn btn-primary">Go Back</a>
+          </div>
+      </div>
+  </div>

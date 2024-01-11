@@ -1,0 +1,59 @@
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email Address</th>
+          <th>
+            <button
+              type="button"
+              title="Add New User"
+              class="btn btn-primary"
+            >
+              <i class="bi bi-plus" [routerLink]="['users/add']" >Add new User</i>
+            </button>
+          </th>
+        </tr>
+      </thead>
+  
+            <tbody>
+        <ng-container *ngFor="let user of users" >
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstname }}</td>
+            <td>{{user.lastname }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <button
+                class="btn btn-danger btn-sm mx-1"
+                title="Delete User"
+                type="button"
+              >
+                <i class="bi bi-trash" [routerLink]="['users/edit' , user.id]">Edit</i>
+              </button>
+              <button
+                class="btn btn-danger btn-sm mx-1"
+                title="Delete User"
+                type="button"
+              >
+                <i class="bi bi-trash" [routerLink]="['users/view' , user.id ] ">view</i>
+              </button>
+              <button  
+              class="btn btn-danger btn-sm mx-1"
+              title="Delete User"
+              type="button"
+              
+            >
+              <i class="bi bi-trash" (click)="deleteUser(user.id)" >delete</i>
+            </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  
+  
